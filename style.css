@@ -1,0 +1,470 @@
+/* Estilos Gerais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #000000;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #8d0482;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Layout Principal */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Painel de Controle */
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: 600;
+    color: #555;
+}
+
+input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #074065;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #700980;
+}
+
+button:disabled {
+    background-color: #b3b3b3;
+    cursor: not-allowed;
+}
+
+.recipient-info {
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.recipient-info h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+/* Fila de Entregas */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.queue-stats {
+    background-color: #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#queueCount {
+    color: #8626da;
+    font-weight: 700;
+}
+
+.queue-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    min-height: 150px;
+}
+
+.queue-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #6818b2;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.queue-item:hover {
+    transform: translateX(5px);
+    background-color: #e8f4fd;
+}
+
+.queue-item.selected {
+    background-color: #e1f0fb;
+    border-left: 4px solid #0b20c3;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.queue-item-info h4 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.queue-item-info p {
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 2px;
+}
+
+.empty-queue {
+    text-align: center;
+    color: #888;
+    padding: 1.5rem;
+    font-style: italic;
+}
+
+.queue-item-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 8px;
+}
+
+.action-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.deliver-btn {
+    color: #2ecc71;
+}
+
+.deliver-btn:hover {
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+.remove-btn {
+    color: #781207;
+}
+
+.remove-btn:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.data-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.data-controls button {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+#clearQueue {
+    background-color: #f6af71;
+}
+
+#clearQueue:hover {
+    background-color: #d35400;
+}
+
+#clearData, #clearHistory {
+    background-color: #e74c3c;
+}
+
+#clearData:hover, #clearHistory:hover {
+    background-color: #c0392b;
+}
+
+/* Seção de Animação */
+.animation-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.road {
+    height: 80px;
+    background-color: #ddd;
+    border-radius: 4px;
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.delivery-truck {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #e74c3c;
+    transition: left 3s ease-in-out;
+    z-index: 2;
+}
+
+.destination-marker {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #27ae60;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.delivery-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.delivery-status {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.timer-container {
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.timer-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #55065c;
+    transition: width 0.1s linear;
+}
+
+/* Histórico de Entregas */
+.history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 1rem;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #2ecc71;
+}
+
+.history-item-info {
+    flex: 1;
+}
+
+.history-item-time {
+    font-size: 0.8rem;
+    color: #888;
+    text-align: right;
+}
+
+.delivery-time-estimate {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #e67e22;
+    margin-top: 5px;
+}
+
+.delivery-time-estimate i {
+    margin-right: 5px;
+}
+
+.empty-history {
+    text-align: center;
+    color: #888;
+    padding: 1.5rem;
+    font-style: italic;
+}
+
+/* Rodapé */
+footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer i {
+    color: #e74c3c;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .control-panel, .delivery-queue {
+        grid-column: span 1;
+    }
+
+    .animation-container, .delivery-history {
+        grid-column: span 2;
+    }
+}
+
+/* Efeitos e Animações */
+.highlight {
+    animation: highlight 1s;
+}
+
+@keyframes highlight {
+    0% { background-color: rgba(46, 204, 113, 0.3); }
+    100% { background-color: transparent; }
+}
+
+.package-item-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.recipient-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db;
+}
+
+.recipient-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.recipient-details {
+    flex: 1;
+}
+
+/* No arquivo style.css, substitua o código relacionado à animação do caminhão */
+
+/* Substitua isso: */
+.deliver-animation {
+    animation: deliveryMove 3s forwards;
+}
+
+@keyframes deliveryMove {
+    0% { left: 0; }
+    100% { left: calc(100% - 60px); }
+}
+
+/* Por isso: */
+.delivery-truck {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #e74c3c;
+    transition: left 0.1s linear; /* Suaviza o movimento do caminhão */
+    z-index: 2;
+}
+
+/* Tooltip para ID do pacote */
+.package-id {
+    font-size: 0.7rem;
+    color: #95a5a6;
+    margin-top: 4px;
+}

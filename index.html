@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Entregas de Pacotes - POLO VILA VELHA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <i class="fas fa-truck-loading fa-2x"></i>
+            <h1>Hoffmann Express Delivery</h1>
+        </div>
+        <p>Simulador de Entregas de Pacotes</p>
+    </header>
+
+    <main>
+        <section class="control-panel">
+            <h2>Nova Encomenda</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="packageName">Nome para o Pacote:</label>
+                    <input type="text" id="packageName" placeholder="Ex: Livro, Eletrônico, Roupa...">
+                </div>
+                <button id="generatePackage">Gerar Destinatário Aleatório</button>
+                <button id="addToQueue">Adicionar à Fila de Entregas</button>
+            </div>
+
+            <div class="recipient-info" id="recipientInfo">
+                <h3>Informações do Destinatário:</h3>
+                <div id="recipientDetails">
+                    <p>Gere um pacote para ver as informações do destinatário.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="delivery-queue">
+            <div class="section-header">
+                <h2>Fila de Entregas</h2>
+                <div class="queue-stats">
+                    <span id="queueCount">0</span> pacote(s) na fila
+                </div>
+            </div>
+            <div class="queue-container" id="queueContainer">
+                <p class="empty-queue">Não há pacotes na fila</p>
+            </div>
+            <button id="deliverPackage" disabled>Entregar Próximo Pacote</button>
+            <div class="data-controls">
+                <button id="clearQueue" disabled>Limpar Fila</button>
+                <button id="clearData">Limpar Todos os Dados</button>
+            </div>
+        </section>
+
+        <section class="animation-container">
+            <div class="road">
+                <div class="delivery-truck" id="deliveryTruck">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <div class="destination-marker" id="destinationMarker">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+            <div class="delivery-info">
+                <div class="delivery-status" id="deliveryStatus">
+                    <p>Aguardando entrega...</p>
+                </div>
+                <div class="timer-container" id="timerContainer">
+                    <div class="timer-bar" id="timerBar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="delivery-history">
+            <h2>Histórico de Entregas</h2>
+            <div class="history-container" id="historyContainer">
+                <p class="empty-history">Nenhuma entrega realizada</p>
+            </div>
+            <button id="clearHistory" disabled>Limpar Histórico de Entregas</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Equipe Hoffmann - 2025</p>
+        <p>Estrutura de Dados - FIFO</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
